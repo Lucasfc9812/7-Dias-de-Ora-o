@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz: Proteção Espiritual dos Seus Filhos</title>
+  <meta name="description"
+    content="Descubra qual é o seu perfil de mãe orante e receba orientações personalizadas para fortalecer a proteção espiritual dos seus filhos." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- INTRO SCREEN -->
+  <div id="screen-intro" class="screen active">
+    <div class="bg-overlay"></div>
+    <div class="intro-content">
+      <div class="badge">✦ Quiz Espiritual</div>
+      <h1>Você sente que está fazendo o suficiente para <em>proteger seus filhos</em>?</h1>
+      <p class="intro-sub">Este quiz foi criado para mães que amam profundamente — mas às vezes sentem que o amor
+        sozinho não é suficiente para afastar tudo o que assusta lá fora.</p>
+      <p class="intro-hint">⏱ Leva menos de 2 minutos • Resultado personalizado</p>
+      <button id="btn-start" class="btn-primary" onclick="showNameScreen()">
+        Começar
+        <span class="btn-arrow">→</span>
+      </button>
+      <p class="intro-privacy">🔒 Suas respostas são confidenciais</p>
+    </div>
+  </div>
+
+  <!-- NAME CAPTURE SCREEN -->
+  <div id="screen-name" class="screen">
+    <div class="bg-overlay"></div>
+    <div class="whatsapp-container">
+      <h2 class="whatsapp-headline">Antes de começar…</h2>
+      <p class="whatsapp-sub">Como posso te chamar?</p>
+      <input type="text" id="lead-name" class="whatsapp-input" placeholder="Digite seu primeiro nome" required>
+      <button id="btn-name-submit" class="btn-primary" onclick="submitName()"
+        style="width: 100%; justify-content: center;">
+        Começar
+        <span class="btn-arrow">→</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- QUIZ SCREEN -->
+  <div id="screen-quiz" class="screen">
+    <div class="bg-overlay"></div>
+    <div class="quiz-container">
+
+      <!-- Progress Bar -->
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progress-fill"></div>
+      </div>
+      <div class="progress-label" id="progress-label">Pergunta 1 de 5</div>
+
+      <!-- Question Card -->
+      <div class="question-card" id="question-card">
+        <div class="question-icon" id="question-icon"></div>
+        <h2 class="question-text" id="question-text"></h2>
+        <p class="question-micro" id="question-micro"></p>
+        <div class="options-grid" id="options-grid"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- WHATSAPP SCREEN -->
+  <div id="screen-whatsapp" class="screen">
+    <div class="bg-overlay"></div>
+    <div class="whatsapp-container">
+      <h2 class="whatsapp-headline">Seu resultado está pronto.</h2>
+      <p id="whatsapp-sub-text" class="whatsapp-sub">Se você quiser receber orientações e acesso às 7 orações pelo
+        WhatsApp, informe seu número abaixo.</p>
+      <input type="tel" id="lead-whatsapp" class="whatsapp-input" placeholder="(11) 99999-9999" required>
+      <button id="btn-whatsapp-submit" class="btn-primary" onclick="submitWhatsapp()"
+        style="width: 100%; justify-content: center;">
+        Ver meu resultado
+        <span class="btn-arrow">→</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- LOADING SCREEN -->
+  <div id="screen-loading" class="screen">
+    <div class="bg-overlay"></div>
+    <div class="loading-content">
+      <div class="loading-cross">✦</div>
+      <p class="loading-text">Calculando seu perfil…</p>
+      <div class="loading-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <p id="loading-message" class="loading-sub">Analisando suas respostas com cuidado</p>
+    </div>
+  </div>
+
+  <!-- RESULT SCREEN -->
+  <div id="screen-result" class="screen">
+    <div class="bg-overlay"></div>
+    <div class="result-container">
+
+      <div class="result-badge" id="result-badge"></div>
+      <h2 class="result-headline" id="result-headline"></h2>
+      <div class="result-divider"></div>
+      <p class="result-body" id="result-body"></p>
+
+      <!-- Verse -->
+      <div class="verse-box" id="verse-box"></div>
+
+      <!-- Offer Section -->
+      <div class="offer-section">
+        <div class="offer-tag">Recomendado para você</div>
+        <h3 class="offer-title">O que você vai receber:</h3>
+
+        <ul class="offer-list">
+          <li>✔ 7 orações guiadas, uma para cada dia</li>
+          <li>✔ Direcionamento específico para proteção e paz</li>
+          <li>✔ Linguagem simples e acolhedora</li>
+          <li>✔ Acesso imediato após a confirmação</li>
+        </ul>
+
+        <p class="offer-price-text">Por apenas R$17,90.</p>
+
+        <a href="https://pay.wiapy.com/nLbgH55nXj" id="btn-offer" class="btn-offer" onclick="goToOffer()">
+          <span id="offer-cta-text">Quero meu guia agora</span>
+          <span>→</span>
+        </a>
+        <p class="offer-note">📲 Acesso imediato após a confirmação</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+
+</html>
